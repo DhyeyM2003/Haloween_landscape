@@ -26,7 +26,7 @@ def setup():
     clown = loadImage("clown.png")
     vampire = loadImage("vampire.png")
     tophat = loadImage("tophatguy.png")
-    jump = loadImage("jumpscare.png")
+    jump = loadImage("jump.png")
     imagelist = [bigfoot, devil, freddy, zombie, clown, vampire, tophat]
     
 def draw():
