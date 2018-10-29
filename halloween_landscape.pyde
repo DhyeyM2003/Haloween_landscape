@@ -50,7 +50,7 @@ def draw():
         for character in imagelist:
             if mouseX > xdict[character] and mouseX < xdict[character] + character.width/(character.height/200) and mouseY >= 600:
                 textSize(32)
-                text("press space", xdict[character], 550)
+                text("hold space", xdict[character], 550)
     if keyPressed:
         if key == " ":
             image(jump, 0, 0, 1366, 768)
