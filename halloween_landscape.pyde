@@ -31,13 +31,12 @@ def setup():
     
 def draw():
     global x
-    global xdict
     m = 0
-    xdict = {bigfoot : x+100, devil : x+400, freddy : x+700, zombie : x+1000, clown : x+1300, vampire : x+1600, tophat : x+1900}
+    people_location = {bigfoot : x+100, devil : x+400, freddy : x+700, zombie : x+1000, clown : x+1300, vampire : x+1600, tophat : x+1900}
     image(landscape, x, 0)
     image(moon, 1200, 25, 150, 150)
     for character in imagelist:
-        image(character, xdict[character], 600, character.width/(character.height/200), 200)
+        image(character, people_location[character], 600, character.width/(character.height/200), 200)
     if x != 0:
         image(left, 10, 350, 100, 100)
     if x != -1100:
@@ -48,10 +47,9 @@ def draw():
         x -= 5
     if mousePressed:
         for character in imagelist:
-            if mouseX > xdict[character] and mouseX < xdict[character] + character.width/(character.height/200) and mouseY >= 600:
+            if mouseX > people_location[character] and mouseX < people_location[character] + character.width/(character.height/200) and mouseY >= 600:
                 textSize(32)
-                text("hold space", xdict[character], 550)
+                text("hold space", people_location[character], 550)
     if keyPressed:
         if key == " ":
             image(jump, 0, 0, 1366, 768)
-    
