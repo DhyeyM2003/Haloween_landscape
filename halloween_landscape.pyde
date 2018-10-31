@@ -31,7 +31,6 @@ def setup():
     
 def draw():
     global x
-    m = 0
     people_location = {bigfoot : x+100, devil : x+400, freddy : x+700, zombie : x+1000, clown : x+1300, vampire : x+1600, tophat : x+1900}
     image(landscape, x, 0)
     image(moon, 1200, 25, 150, 150)
