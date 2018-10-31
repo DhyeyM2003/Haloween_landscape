@@ -31,9 +31,16 @@ def setup():
     
 def draw():
     global x
+    
+    #This dictionary assigns each charecter an x-value
+    #Makes it easier to add more if needed
     people_location = {bigfoot : x+100, devil : x+400, freddy : x+700, zombie : x+1000, clown : x+1300, vampire : x+1600, tophat : x+1900}
+    
+    #Background
     image(landscape, x, 0)
     image(moon, 1200, 25, 150, 150)
+    
+    #Draws charecters and impliments moving motion
     for character in imagelist:
         image(character, people_location[character], 600, character.width/(character.height/200), 200)
     if x != 0:
@@ -44,11 +51,14 @@ def draw():
         x += 5
     if x - 5 >= -1100 and mouseX >= 1256:
         x -= 5
+        
+#Gives the charecters "text boxes"
     if mousePressed:
         for character in imagelist:
             if mouseX > people_location[character] and mouseX < people_location[character] + character.width/(character.height/200) and mouseY >= 600:
                 textSize(32)
                 text("hold space", people_location[character], 550)
+#The Jumpscare
     if keyPressed:
         if key == " ":
             image(jump, 0, 0, 1366, 768)
