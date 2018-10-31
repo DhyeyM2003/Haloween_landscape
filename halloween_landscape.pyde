@@ -15,6 +15,7 @@ def setup():
     global jump
     global imagelist
     global menuscreen
+    global menu
     size(1366, 768)
     moon = loadImage("half_moon__.png")
     landscape = loadImage("halloween background.png")
@@ -29,6 +30,7 @@ def setup():
     tophat = loadImage("tophatguy.png")
     jump = loadImage("jump.png")
     menuscreen = loadImage("menuscreen.png")
+    menu = True
     image(menuscreen,0,0)
     imagelist = [bigfoot, devil, freddy, zombie, clown, vampire, tophat]
     noLoop()
@@ -36,7 +38,7 @@ def setup():
 def mousePressed():
     if mousePressed:
         loop()
-        menu = True
+        menu = False
 
 def draw():
     global x
