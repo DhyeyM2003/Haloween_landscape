@@ -40,7 +40,7 @@ def draw():
     image(landscape, x, 0)
     image(moon, 1200, 25, 150, 150)
     
-    #Draws charecters and impliments moving motion
+    #Draws charecters and impliments background motion
     for character in imagelist:
         image(character, people_location[character], 600, character.width/(character.height/200), 200)
     if x != 0:
@@ -58,7 +58,7 @@ def draw():
             if mouseX > people_location[character] and mouseX < people_location[character] + character.width/(character.height/200) and mouseY >= 600:
                 textSize(32)
                 text("hold space", people_location[character], 550)
-#The Jumpscare
+#This is an easter egg
     if keyPressed:
         if key == " ":
             image(jump, 0, 0, 1366, 768)
