@@ -14,6 +14,8 @@ def setup():
     global tophat
     global jump
     global imagelist
+    global menuscreen
+    global menu
     size(1366, 768)
     moon = loadImage("half_moon__.png")
     landscape = loadImage("halloween background.png")
@@ -27,10 +29,18 @@ def setup():
     vampire = loadImage("vampire.png")
     tophat = loadImage("tophatguy.png")
     jump = loadImage("jump.png")
+    menuscreen = loadImage("menuscreen.png")
+    menu = True
     imagelist = [bigfoot, devil, freddy, zombie, clown, vampire, tophat]
-    
+
+
+
 def draw():
     global x
+    global menu
+    if mousePressed:
+        loop()
+        menu = False
     
     #This dictionary assigns each charecter an x-value
     #Makes it easier to add more if needed
@@ -62,3 +72,5 @@ def draw():
     if keyPressed:
         if key == " ":
             image(jump, 0, 0, 1366, 768)
+    if menu:
+      image(menuscreen,0,0,1366,768)
